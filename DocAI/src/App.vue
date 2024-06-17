@@ -2,9 +2,7 @@
   <heading/>
   <promptpad/>
 </template>
-<script>
-  
-</script>
+<script></script>
 <style>
   header{
     position:sticky;
@@ -17,7 +15,7 @@
     width:100%;
     text-align:center;
     bottom:0;
-    position:sticky;
+    position:fixed;
   }
   textarea{
     resize: none;
@@ -26,5 +24,20 @@
     padding:5px;
     margin-right:5px;
     border-radius:5px;
+  }
+  .instructions{
+    display:inline-block;
+    width: 100%;
+  }
+  .instr_boxes{
+    display:inline-block;
+    border: 1px solid black;
+    text-align:center;
+    width:31%;
+    margin:10px;
+    padding:2px;
+  }
+  .chatscreen{
+    overflow-y: scroll;
   }
 </style>
