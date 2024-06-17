@@ -15,7 +15,7 @@
     width:100%;
     text-align:center;
     bottom:0;
-    position:fixed;
+    position:sticky;
   }
   textarea{
     resize: none;
@@ -38,6 +38,26 @@
     padding:2px;
   }
   .chatscreen{
-    overflow-y: scroll;
+    overflow: auto;
+  }
+  .user_messages{
+    border:2px solid green;
+    border-radius:2px;
+    padding:2px;
+    width:100%;
+    text-align:left;
+    float:right;
+    margin:15px;
+    display:block;
+  }
+  .assistant_messages{
+    border:2px solid blue;
+    border-radius:2px;
+    padding:2px;
+    width:100%;
+    text-align:left;
+    float:right;
+    margin:15px;
+    display:block;
   }
 </style>
