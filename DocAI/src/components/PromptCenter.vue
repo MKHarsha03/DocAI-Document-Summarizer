@@ -39,14 +39,33 @@
             };
         },
         methods:{
-            registerMessage(){
-                let item={speaker:'User',message:this.myPrompt}
-                this.user_prompts.push(item)
-                let item2={speaker:'DocAI',message:this.myPrompt}
-                this.user_prompts.push(item2)
-                this.myPrompt=null
-            }
-        }
+            async registerMessage() {
+      // Push user message to chat
+      let userItem = { speaker: 'User', message: this.myPrompt };
+      this.user_prompts.push(userItem);
+      
+      // Create form data
+      let formData = new FormData();
+      formData.append('prompt', this.myPrompt);
+      formData.append('file', this.$refs.fileInput.files[0]);
+      
+      // Send data to backend
+      let response = await fetch('/api/process_prompt', {
+        method: 'POST',
+        body: formData
+      });
+      
+      let result = await response.json();
+      
+      // Push AI response to chat
+      let aiItem = { speaker: 'DocAI', message: result.message };
+      this.user_prompts.push(aiItem);
+      
+      // Reset the prompt
+      this.myPrompt = null;
+      this.$refs.fileInput.value = null;
     }
+  }
+}
 </script>
 <style></style>

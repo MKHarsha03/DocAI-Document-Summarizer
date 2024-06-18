@@ -2,7 +2,9 @@
   <heading/>
   <promptpad/>
 </template>
-<script></script>
+<script>
+  
+</script>
 <style>
   header{
     position:sticky;
