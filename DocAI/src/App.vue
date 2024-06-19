@@ -62,4 +62,11 @@
     margin:15px;
     display:block;
   }
+  @media screen and (max-width: 1200px){
+    .instr_boxes{
+      width:100%;
+      margin-left:5px;
+      margin-right:5px;
+    }
+  }
 </style>
